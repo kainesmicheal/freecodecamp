@@ -1,0 +1,18 @@
+
+body{
+    position: relative;
+    background-color: #282c34;
+    color: white;
+    font-family: 'Lobster';
+    text-align: center;
+}
+.b{
+    position: relative;
+    background-color: white;
+    color: black;
+    height: 200px;
+    width:70%;
+    margin-top: 3em;
+    margin-left: 15%;
+    border-radius: 5px;
+}
