@@ -1,10 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import marked from "marked"
 
-const projectName = "markdown-previewer";
-localStorage.setItem('example_project', 'Markdown Previewer');
+
 
 marked.setOptions({
   breaks: true,
@@ -43,22 +41,11 @@ class App extends React.Component{
     });
   }
   render() {
-    const classes = this.state.editorMaximized ? 
-          ['editorWrap maximized', 
-           'previewWrap hide', 
-           'fa fa-compress'] : 
-          this.state.previewMaximized ?
-          ['editorWrap hide', 
-           'previewWrap maximized', 
-           'fa fa-compress'] :
-          ['editorWrap', 
-           'previewWrap', 
-           'fa fa-arrows-alt'];
     return (
       <div>
-        <div className={classes[0]}>
+        <div >
           <Toolbar 
-            icon={classes[2]} 
+             
             onClick={this.handleEditorMaximize}
             text="Editor"/>
           <Editor markdown={this.state.markdown} 
@@ -66,9 +53,9 @@ class App extends React.Component{
         </div>
         <div className="converter">
         </div>
-        <div className={classes[1]}>
+        <div >
           <Toolbar
-            icon={classes[2]} 
+            
             onClick={this.handlePreviewMaximize}
             text="Previewer"/>
           <Preview  markdown={this.state.markdown}/>
@@ -80,10 +67,10 @@ class App extends React.Component{
 
 const Toolbar = (props) => {
     return (
-      <div className="toolbar">
-        <i title="no-stack-dub-sack" className="fa fa-free-code-camp"/>      
+      <div>
+          
         {props.text}
-        <i onClick={props.onClick} className={props.icon}></i>
+        <i onClick={props.onClick}></i>
       </div>
    )
 }
